@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Photo Album</title>
+</head>
+<body>
+<h1>Rad Stuff From The 80's</h1>
+
+<div class="gifs container">
+    <div class="row">
+        <div th:each="photo : ${randomfive}" class="col s12 l4">
+                <img th:src="@{|/images/${photo.name}.jpg|}" />
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

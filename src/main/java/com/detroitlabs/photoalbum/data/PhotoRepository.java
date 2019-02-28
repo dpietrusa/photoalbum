@@ -3,11 +3,9 @@ package com.detroitlabs.photoalbum.data;
 import com.detroitlabs.photoalbum.model.Photo;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 @Component
@@ -26,16 +24,19 @@ public class PhotoRepository {
     );
 
     public List<Photo> returnFiveRandom(){
-        Random rand = new Random();
-        int value = rand.nextInt(9);
-        List<Photo> randomFive = new ArrayList<>();
+        List<Photo> randomFiveImages = new ArrayList<>();
+        ArrayList<Integer> randomIntArray = new ArrayList<>();
 
-        int i = 0;
-        while (i <= 4) {
-        randomFive.add(ALL_PHOTOS.get(value));
-        i++;
-        }return randomFive;
+        for (int i = 0; i < 10; i++) {
+            randomIntArray.add(i);
+        } Collections.shuffle(randomIntArray);
+
+        for (int i = 0; i < 5; i++) {
+            randomFiveImages.add(ALL_PHOTOS.get(randomIntArray.indexOf(i)));
+        } return randomFiveImages;
+    }
+
     }
 
 
-}
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/app.css}" />
+    <meta charset="UTF-8"/>
+    <title>Photo Album Sorted by Date</title>
+</head>
+<body>
+<h1>Sorted By Date</h1>
+
+<div class="gifs container">
+    <div class="row">
+        <div th:each="Photo : ${sortedbydate}" class="col s12 l4">
+            <img th:src="@{|/images/${Photo.name}.jpg|}"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

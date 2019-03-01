@@ -22,4 +22,13 @@ public class PhotoController {
         return "home";
     }
 
+    @RequestMapping("/sortedbydate")
+    public String sortedByDate(ModelMap modelMap){
+    List<Photo> photo = photoRepository.sortByDate();
+    modelMap.put("sortedbydate", photo);
+        return "sortedbydate";
+    }
+
+
+
 }

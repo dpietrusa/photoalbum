@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/app.css}" />
+    <meta charset="UTF-8"/>
+    <title>Catagories</title>
+</head>
+<body>
+<h1>PANTONE</h1>
+<h2>----- Color of The Year -----</h2>
+
+<p> <a th:href="@{/sortedbyname}">Sort By Name</a> / <a th:href="@{/sortedbydate}">Sort By Year</a> / <a th:href="@{/categories}">Sort By Category</a></p>
+
+</body>
+
+<div th:each="Category : ${category}" class="col s12 l4">
+    <div class="categories"><a th:text="${category.name}"></a></div>
+</html>

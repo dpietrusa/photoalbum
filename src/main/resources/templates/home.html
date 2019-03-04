@@ -3,18 +3,18 @@
 <head>
     <link rel="stylesheet" th:href="@{/app.css}" />
     <meta charset="UTF-8"/>
-    <title>Photo Album</title>
+    <title>Pantone Color Of The Year</title>
 </head>
 <body>
-<h1>Rad Stuff</h1>
-<h2>From The 80's</h2>
+<h1>PANTONE</h1>
+<h2>----- Color of The Year -----</h2>
 
-<div class="gifs container">
-    <div class="row">
-        <div th:each="Photo : ${randomfive}" class="col s12 l4">
-                <img th:src="@{|/images/${Photo.name}.jpg|}"/>
-        </div>
-    </div>
+<p> <a th:href="@{/sortedbyname}">Sort By Name</a> / <a th:href="@{/sortedbydate}">Sort By Date</a> / <a th:href="@{/categories}">Sort By Category</a></p>
+
+<div class="photos container">
+        <div th:each="Photo : ${randomfive}">
+            <img th:src="@{|/images/${Photo.name}.png|}" class="col s12 l4"/>
+</div>
 </div>
 
 </body>

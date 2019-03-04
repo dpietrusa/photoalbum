@@ -3,17 +3,21 @@
 <head>
     <link rel="stylesheet" th:href="@{/app.css}" />
     <meta charset="UTF-8"/>
-    <title>Photo Album Sorted by Date</title>
+    <title>Sorted by Date</title>
 </head>
 <body>
 <h1>Sorted By Date</h1>
+<h2>----- Color of The Year -----</h2>
+<p> <a th:href="@{/sortedbyname}">Sort By Name</a> / <a th:href="@{/sortedbydate}">Sort By Year</a> / <a th:href="@{/categories}">Sort By Category</a></p>
 
 <div class="gifs container">
-    <div class="row">
+
         <div th:each="Photo : ${sortedbydate}" class="col s12 l4">
-            <img th:src="@{|/images/${Photo.name}.jpg|}"/>
+            <div class="year"><a th:text="${Photo.dateUploaded.year}"></a></div>
+            <img th:src="@{|/images/${Photo.name}.png|}"/>
         </div>
-    </div>
+
+
 </div>
 
 </body>

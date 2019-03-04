@@ -6,12 +6,12 @@ public class Photo {
 
     String name;
     LocalDate dateUploaded;
-    int idTag;
+    int id;
 
-    public Photo(String name, LocalDate dateUploaded, int idTag) {
+    public Photo(String name, LocalDate dateUploaded, int id) {
         this.name = name;
         this.dateUploaded = dateUploaded;
-        this.idTag = idTag;
+        this.id = id;
     }
 
     public String getName() {
@@ -30,11 +30,11 @@ public class Photo {
         this.dateUploaded = dateUploaded;
     }
 
-    public int getIdTag() {
-        return idTag;
+    public int getId() {
+        return id;
     }
 
-    public void setIdTag(int idTag) {
-        this.idTag = idTag;
+    public void setId(int id) {
+        this.id = id;
     }
 }
